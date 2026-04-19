@@ -1,0 +1,14 @@
+Rahul Mehta
+Email: rahul.mehta@email.com
+Phone: +91-98765-10001
+
+Summary:
+Full-stack developer focused on web applications and cloud deployment.
+
+Skills:
+JavaScript, React, Node.js, Python, MongoDB, Azure
+
+Experience:
+Software Engineer at CloudCraft (2019-2026)
+- Developed internal tools for HR and finance teams.
+- Deployed microservices with CI/CD pipelines.

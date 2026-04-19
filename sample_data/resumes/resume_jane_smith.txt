@@ -1,0 +1,14 @@
+Jane Smith
+Email: jane.smith@email.com
+Phone: +1-555-0101
+
+Summary:
+Data analyst with strong SQL and dashboard development background.
+
+Skills:
+SQL, Excel, Power BI, Python, Pandas
+
+Experience:
+Data Analyst at Insights Hub (2020-2026)
+- Created KPI dashboards for sales and retention.
+- Automated weekly reports using Python scripts.

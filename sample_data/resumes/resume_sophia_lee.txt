@@ -1,0 +1,14 @@
+Sophia Lee
+Email: sophia.lee@email.com
+Phone: +1-555-0103
+
+Summary:
+Product manager with technical background in SaaS platforms.
+
+Skills:
+Product Strategy, Agile, SQL, Python, User Research
+
+Experience:
+Product Manager at SaaSFlow (2018-2026)
+- Led roadmap planning for analytics and billing modules.
+- Collaborated with engineering for feature rollouts.

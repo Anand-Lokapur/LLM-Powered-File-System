@@ -1,0 +1,14 @@
+Aman Kapoor
+Email: aman.kapoor@email.com
+Phone: +91-98765-10002
+
+Summary:
+QA automation engineer experienced in API and UI testing.
+
+Skills:
+Python, Selenium, Playwright, Postman, Jenkins
+
+Experience:
+QA Engineer at TestRight (2021-2026)
+- Built automated UI suites for regression testing.
+- Increased test coverage from 45% to 80%.

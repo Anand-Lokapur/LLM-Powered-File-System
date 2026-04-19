@@ -1,0 +1,14 @@
+John Doe
+Email: john.doe@email.com
+Phone: +1-555-0100
+
+Summary:
+Software engineer with 5 years of experience in backend systems and APIs.
+
+Skills:
+Python, FastAPI, PostgreSQL, Docker, AWS, Git
+
+Experience:
+Backend Developer at Acme Tech (2021-2026)
+- Built scalable REST services in Python.
+- Improved API response times by 35%.
