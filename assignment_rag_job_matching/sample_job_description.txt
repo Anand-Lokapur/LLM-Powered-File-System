@@ -1,0 +1,16 @@
+We are hiring a Senior Python Machine Learning Engineer.
+
+Must-have requirements:
+- 5+ years of software engineering experience
+- Strong Python programming skills
+- Hands-on experience with Machine Learning and NLP
+- Experience with AWS and Docker
+
+Good to have:
+- FastAPI or Django
+- MLOps and model deployment
+
+Responsibilities:
+- Build ML-powered features and APIs
+- Collaborate with product and data teams
+- Optimize model performance and production reliability
