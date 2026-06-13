@@ -2,7 +2,10 @@ import json
 from typing import Any, Dict, Optional
 
 import streamlit as st
-from matching_agent import ScreeningAgent
+try:
+    from .matching_agent import ScreeningAgent
+except ImportError:
+    from matching_agent import ScreeningAgent
 
 
 st.set_page_config(page_title="Screening Agent", layout="wide")

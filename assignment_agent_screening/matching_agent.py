@@ -8,14 +8,24 @@ from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, END, START
 from langgraph.types import Command
 
-from agent_state import ScreeningState, Candidate, JobRequirements
-from screening_tools import (
-    extract_requirements,
-    search_resumes_for_jd,
-    generate_interview_questions,
-    compare_candidates,
-    analyze_candidate_for_hire,
-)
+try:
+    from .agent_state import ScreeningState, Candidate, JobRequirements
+    from .screening_tools import (
+        extract_requirements,
+        search_resumes_for_jd,
+        generate_interview_questions,
+        compare_candidates,
+        analyze_candidate_for_hire,
+    )
+except ImportError:
+    from agent_state import ScreeningState, Candidate, JobRequirements
+    from screening_tools import (
+        extract_requirements,
+        search_resumes_for_jd,
+        generate_interview_questions,
+        compare_candidates,
+        analyze_candidate_for_hire,
+    )
 
 
 class ScreeningAgent:
@@ -24,7 +34,12 @@ class ScreeningAgent:
     Part A: Graph-based workflow orchestration.
     """
 
-    def __init__(self):
+    def __init__(self, mcp_url: str | None = None):
+        import os
+
+        if mcp_url:
+            os.environ["MCP_URL"] = mcp_url
+
         self.llm = ChatOpenAI(model="gpt-4.1-mini", temperature=0.5)
         self.graph = self._build_graph()
 

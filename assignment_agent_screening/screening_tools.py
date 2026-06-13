@@ -11,7 +11,10 @@ from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
 
-from agent_state import Candidate, JobRequirements
+try:
+    from .agent_state import Candidate, JobRequirements
+except ImportError:
+    from agent_state import Candidate, JobRequirements
 
 
 CURRENT_DIR = Path(__file__).resolve().parent

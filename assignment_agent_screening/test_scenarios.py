@@ -4,7 +4,10 @@ Test Scenarios for Screening Agent
 5+ conversation flows demonstrating Part A, B, and C capabilities.
 """
 
-from matching_agent import ScreeningAgent
+try:
+    from .matching_agent import ScreeningAgent
+except ImportError:
+    from matching_agent import ScreeningAgent
 
 
 def scenario_1_basic_screening():

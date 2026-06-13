@@ -18,7 +18,33 @@ ROOT_DIR = CURRENT_DIR.parent
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from fs_tools import list_files, read_file
+# Prefer MCP-based filesystem calls when MCP_URL is set; otherwise fall back to local fs_tools
+MCP_URL = None
+try:
+    import os
+
+    MCP_URL = os.environ.get("MCP_URL")
+except Exception:
+    MCP_URL = None
+
+if MCP_URL:
+    try:
+        from mcp_client import call_rpc as _call_rpc
+
+        def list_files(directory: str, extension: str | None = None):
+            params = {"directory": directory}
+            if extension:
+                params["extension"] = extension
+            resp = _call_rpc(MCP_URL, "list_files", params)
+            return resp.get("result") if isinstance(resp, dict) and "result" in resp else resp
+
+        def read_file(filepath: str):
+            resp = _call_rpc(MCP_URL, "read_file", {"filepath": filepath})
+            return resp.get("result") if isinstance(resp, dict) and "result" in resp else resp
+    except Exception:
+        from fs_tools import list_files, read_file
+else:
+    from fs_tools import list_files, read_file
 
 
 SECTION_HEADERS = {
