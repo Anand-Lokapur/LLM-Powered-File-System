@@ -1,0 +1,14 @@
+Emily Clark
+Email: emily.clark@email.com
+Phone: +1-555-0102
+
+Summary:
+Machine learning engineer with expertise in NLP and model deployment.
+
+Skills:
+Python, PyTorch, Scikit-learn, NLP, MLOps
+
+Experience:
+ML Engineer at VisionAI (2022-2026)
+- Built text classification models for customer support tickets.
+- Reduced model serving latency by 20%.
