@@ -6,7 +6,10 @@ import re
 from pathlib import Path
 from typing import Any, Dict, List
 
-from resume_rag import ResumeRAG, default_persist_dir, default_resumes_dir
+try:
+    from .resume_rag import ResumeRAG, default_persist_dir, default_resumes_dir
+except ImportError:
+    from resume_rag import ResumeRAG, default_persist_dir, default_resumes_dir
 
 
 CRITICAL_SKILLS = {

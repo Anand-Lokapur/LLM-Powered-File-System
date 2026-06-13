@@ -4,8 +4,12 @@ import argparse
 import json
 from pathlib import Path
 
-from job_matcher import JobMatcher
-from resume_rag import ResumeRAG, default_persist_dir, default_resumes_dir
+try:
+    from .job_matcher import JobMatcher
+    from .resume_rag import ResumeRAG, default_persist_dir, default_resumes_dir
+except ImportError:
+    from job_matcher import JobMatcher
+    from resume_rag import ResumeRAG, default_persist_dir, default_resumes_dir
 
 
 def main() -> None:

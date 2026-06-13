@@ -91,6 +91,45 @@ python llm_file_assistant.py
 python llm_file_assistant.py "Read all resumes in sample_data/resumes"
 ```
 
+## MCP-based Filesystem Server
+
+This repository also includes a JSON-RPC 2.0 MCP-style filesystem server and a refactored agent path that can use it.
+
+### Start the server
+
+```powershell
+python filesystem_mcp_server.py
+```
+
+Available endpoints:
+- `POST /rpc` for JSON-RPC calls
+- `GET /resources` for resource discovery
+- `GET /config` for server configuration
+
+### Run the MCP demo
+
+```powershell
+$env:MCP_URL = "http://127.0.0.1:8080/rpc"
+python mcp_demo.py
+```
+
+### Run the agent directly with MCP
+
+```powershell
+$env:MCP_URL = "http://127.0.0.1:8080/rpc"
+python -c "from assignment_agent_screening.matching_agent import ScreeningAgent; agent = ScreeningAgent(mcp_url='http://127.0.0.1:8080/rpc'); print(agent.run_initial_screening('Looking for a Python backend engineer with AWS experience')['agent_response'][:800])"
+```
+
+### Example JSON-RPC calls
+
+```powershell
+python -c "from mcp_client import call_rpc; import json; print(json.dumps(call_rpc('http://127.0.0.1:8080/rpc', 'list_files', {'directory': 'sample_data/resumes'}), indent=2))"
+```
+
+```powershell
+python -c "from mcp_client import call_rpc; import json; print(json.dumps(call_rpc('http://127.0.0.1:8080/rpc', 'batch_process', {'filepaths': ['sample_data/resumes/resume_john_doe.txt'], 'operation': 'read'}), indent=2))"
+```
+
 ## Example Queries
 
 - `Read all resumes in the sample_data/resumes folder`

@@ -5,7 +5,10 @@ Usage: python demo_agent.py
 """
 
 import json
-from matching_agent import ScreeningAgent
+try:
+    from .matching_agent import ScreeningAgent
+except ImportError:
+    from matching_agent import ScreeningAgent
 
 
 SAMPLE_JD = """

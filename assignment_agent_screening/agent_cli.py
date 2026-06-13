@@ -4,7 +4,10 @@ import argparse
 import json
 from typing import Any
 
-from matching_agent import ScreeningAgent
+try:
+    from .matching_agent import ScreeningAgent
+except ImportError:
+    from matching_agent import ScreeningAgent
 
 
 DEMO_JOB_DESCRIPTION = """
